@@ -7,12 +7,14 @@ export default function Layout () {
 
     return (
         <div className="flex">
-            <nav className='bg-slate-700 mr-[15px] overflow-y-scroll text-center w-[250px] h-screen px-20 py-6'>
-                <img onClick={() => navigate('/')} className='w-80 cursor-pointer' src="/vite.svg" alt="Vite Logo" />
-                <ul className='items-center flex flex-col justify-center text-2xl font-bold'>
+            <nav className='bg-slate-700 mr-[15px] overflow-y-auto text-center w-[250px] h-screen py-6 px-5'>
+                <div className='px-5'>
+                    <img onClick={() => navigate('/')} className='w-80 cursor-pointer' src="/vite.svg" alt="Vite Logo" />
+                </div>
+                <ul className='items-center flex flex-col justify-center text-2xl font-bold mt-10'>
                     <li>
                         <Link className={`${router.pathname === '/' ? 'text-gray-600 transition-colors' : ''}`} to='/'>
-                        Home
+                        Shopping Page
                         </Link>
                     </li>
                     <li>

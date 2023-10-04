@@ -31,6 +31,7 @@ module.exports = {
         'padded-blocks': ['error', 'always'],
         'react/prop-types': 'off',
         '@typescript-eslint/no-confusing-void-expression': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off'
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/consistent-type-assertions': 'off'
     }
 }
