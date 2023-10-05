@@ -1,12 +1,17 @@
 import { useContext } from 'react'
 import { ProductContext } from './ProductCard'
 
-export default function ProductCardButtons () {
+export interface Props {
+    className?: string
+    style?: React.CSSProperties
+}
+
+export default function ProductCardButtons ({ className, style }: Props) {
 
     const { handleIncrease, counter } = useContext(ProductContext)
 
     return (
-        <div className="m-[10px] flex items-center">
+        <div style={style} className={`${className} m-[10px] flex items-center`}>
             <button
                 onClick={() => handleIncrease(-1) }
                 className="cursor-pointer bg-transparent border-[1px] border-black rounded-l-[5px] text-[20px] w-[30px] hover:bg-gray-400">
