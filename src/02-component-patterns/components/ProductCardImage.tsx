@@ -14,7 +14,7 @@ export default function ProductCardImage ({ className, style }: Props) {
     return (
         <img
             style={style}
-            className={`${className} w-full rounded-tl-[15px] rounded-tr-[15px]`}
+            className={`${className} w-full`}
             src={product.img ?? noImg}
             alt="coffe mug image"
         />

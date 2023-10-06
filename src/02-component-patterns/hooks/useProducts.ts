@@ -1,12 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { type Product, type onChangeArgs } from '../interfaces/interfaces'
 
-export default function useProducts () {
+interface useProductsArgs {
+    product: Product
+    onChange?: (args: onChangeArgs) => void
+    value?: number
+}
 
-    const [counter, setCounter] = useState(0)
+export default function useProducts ({ onChange, product, value = 0 }: useProductsArgs) {
+
+    const [counter, setCounter] = useState(value)
+    const isControlled = useRef(!(onChange == null))
+
+    useEffect(() => {
+
+        setCounter(value)
+
+    }, [value])
 
     const handleIncrease = (value: number): void => {
 
-        setCounter((prevState) => Math.max(prevState + value, 0))
+        if (isControlled.current) {
+
+            return onChange?.({ quantity: value, product })
+
+        }
+        const newValue = Math.max(counter + value, 0)
+        setCounter(newValue)
+
+        onChange != null && onChange({ quantity: newValue, product })
 
     }
 

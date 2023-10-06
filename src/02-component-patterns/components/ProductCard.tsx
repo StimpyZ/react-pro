@@ -1,6 +1,7 @@
 import useProducts from '../hooks/useProducts'
 import { type ReactElement, createContext } from 'react'
 import {
+    type onChangeArgs,
     type Product,
     type ProductContextProps
 } from '../interfaces/interfaces'
@@ -12,16 +13,20 @@ export interface Props {
     children?: ReactElement | ReactElement[]
     className?: string
     style?: React.CSSProperties
+    onChange?: (args: onChangeArgs) => void
+    value?: number
 }
 
 export default function ProductCard ({
     product,
     children,
     className,
-    style
+    style,
+    onChange,
+    value
 }: Props) {
 
-    const { counter, handleIncrease } = useProducts()
+    const { counter, handleIncrease } = useProducts({ onChange, product, value })
 
     return (
         <ProductContext.Provider
