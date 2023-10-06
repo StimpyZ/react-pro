@@ -15,38 +15,23 @@ export default function useShoppingCart () {
 
         setShoppingCart(prev => {
 
-            const productInCart: ProductInCart = prev[product.id] ?? { ...product, quantity: 0 }
+            const productInCart = { ...prev }
 
-            if (Math.max(productInCart.quantity + quantity, 0) > 0) {
+            if (quantity === 0) {
 
-                productInCart.quantity += quantity
-                return {
-                    ...prev,
-                    [product.id]: productInCart
+                const { [product.id]: deletedProduct, ...rest } = productInCart
+                return rest
+
+            } else {
+
+                productInCart[product.id] = {
+                    ...product,
+                    quantity
                 }
 
+                return productInCart
+
             }
-
-            const { [product.id]: toDelete, ...rest } = prev
-            return rest
-
-            // const productInCart = { ...prev }
-
-            // if (quantity === 0) {
-
-            //     const { [product.id]: deletedProduct, ...rest } = productInCart
-            //     return rest
-
-            // } else {
-
-            //     productInCart[product.id] = {
-            //         ...product,
-            //         quantity
-            //     }
-
-            //     return productInCart
-
-            // }
 
         })
 
