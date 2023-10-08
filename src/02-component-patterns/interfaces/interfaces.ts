@@ -13,6 +13,7 @@ export interface ProductContextProps {
     counter: number
     handleIncrease: (value: number) => void
     product: Product
+    maxQuantity?: number
 }
 
 export interface ProductCardHOCProps {
@@ -25,4 +26,18 @@ export interface ProductCardHOCProps {
 export interface onChangeArgs {
     product: Product
     quantity: number
+}
+
+export interface InitialValues {
+    quantity?: number
+    maxQuantity?: number
+}
+
+export interface ProductCardHandlers {
+    quantity: number
+    isMaxQuantityReached: boolean
+    maxQuantity?: number
+    product: Product
+    handleIncrease: (value: number) => void
+    handleReset: () => void
 }
