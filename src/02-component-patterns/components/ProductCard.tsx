@@ -43,13 +43,13 @@ export default function ProductCard ({
             }}
         >
             <div
-                className={`${className} bg-white rounded-[15px] text-black pb-[5px] w-[250px] mr-[5px] mt-[5px]`}
+                className={`${className} bg-gray-700 rounded-[15px] text-white pb-[5px] w-[250px] mr-[5px] mt-[5px]`}
                 style={style}
             >
                 {children({
                     quantity: counter,
                     isMaxQuantityReached,
-                    maxQuantity: initialValues?.maxQuantity,
+                    maxQuantity: initialValues?.maxQuantity ?? 0,
                     product,
                     handleIncrease,
                     handleReset
