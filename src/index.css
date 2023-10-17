@@ -13,3 +13,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+option {
+    background-color: #282c34;
+}
