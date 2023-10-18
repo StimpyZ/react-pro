@@ -4,7 +4,7 @@ interface Props {
     label: string
     id: string
     name: string
-    type?: 'text' | 'email' | 'checkbox'
+    type?: string
     placeholder?: string
     [x: string]: any
 }

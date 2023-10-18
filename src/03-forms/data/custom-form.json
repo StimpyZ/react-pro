@@ -1,0 +1,70 @@
+[
+    {
+        "id": "1",
+        "type": "text",
+        "name": "firstName",
+        "placeholder": " ",
+        "label": "First Name",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "type": "text",
+        "name": "lastName",
+        "placeholder": " ",
+        "label": "Last Name",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "type": "email",
+        "name": "email",
+        "placeholder": " ",
+        "label": "Email",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "type": "select",
+        "name": "favoriteGame",
+        "label": "Favorite Game",
+        "value": "",
+        "options": [
+            {
+                "id": "1",
+                "value": "halo",
+                "label": "Halo"
+            },
+            {
+                "id": "2",
+                "value": "callOfDuty",
+                "label": "Call of Duty"
+            },
+            {
+                "id": "3",
+                "value": "battlefield",
+                "label": "Battlefield"
+            }
+        ],
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    }
+]

@@ -7,9 +7,9 @@ export default function Layout () {
 
     return (
         <div className="flex">
-            <nav className='bg-slate-700 mr-[15px] overflow-y-auto text-center w-[250px] h-screen px-20 py-6'>
+            <nav className='bg-slate-700 mr-[15px] overflow-y-auto text-center w-[250px] h-screen px-10 py-6'>
                 <img onClick={() => navigate('/')} className='w-80 cursor-pointer' src="/vite.svg" alt="Vite Logo" />
-                <ul className='items-center flex flex-col justify-center text-2xl font-bold'>
+                <ul className='items-center flex flex-col justify-center text-lg'>
                     <li>
                         <Link className={`${router.pathname === '/register' ? 'text-gray-600 transition-colors' : ''}`} to='/register'>
                         Register Page
@@ -35,6 +35,17 @@ export default function Layout () {
                         Formik Abstractation
                         </Link>
                     </li>
+                    <li>
+                        <Link className={`${router.pathname === '/formik-page' ? 'text-gray-600 transition-colors' : ''}`} to='/formik-page'>
+                        Formik Register
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className={`${router.pathname === '/dynamic-form' ? 'text-gray-600 transition-colors' : ''}`} to='/dynamic-form'>
+                        DynamycForm
+                        </Link>
+                    </li>
+
                 </ul>
             </nav>
 

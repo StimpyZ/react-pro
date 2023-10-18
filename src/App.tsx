@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Layout from './layouts/Layout'
-import { RegisterPage, FormikBasicPage, FormikYupPage, FormikComponents, FormikAbstractation } from './03-forms/pages'
+import { RegisterPage, FormikBasicPage, FormikYupPage, FormikComponents, FormikAbstractation, RegisterFormikPage, DynamycForm } from './03-forms/pages'
 
 function App () {
 
@@ -13,6 +13,8 @@ function App () {
                     <Route path="/formik-yup" index element={<FormikYupPage />} />
                     <Route path="/formik-components" index element={<FormikComponents />} />
                     <Route path="/formik-abstractation" index element={<FormikAbstractation />} />
+                    <Route path="/formik-page" index element={<RegisterFormikPage />} />
+                    <Route path="/dynamic-form" element={<DynamycForm />} />
                     <Route path="/*" element={<Link to='/lazy1' replace/>} />
                 </Route>
             </Routes>
